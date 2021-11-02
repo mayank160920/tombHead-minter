@@ -1,0 +1,33 @@
+.header {
+  width: 90%;
+  margin: 20px auto;
+  font-size: min(4vw, 20px);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__heading {
+  font-size: inherit;
+  color: var(--fgSecondary);
+}
+
+.connectButton {
+  font-size: inherit;
+  background-color: var(--fgPrimary);
+  border-radius: var(--borderRadius);
+  color: var(--fgSecondary);
+  padding: 5px 10px;
+}
+
+.connectButton:hover {
+  cursor: pointer;
+}
+
+.address {
+  color: var(--bgText);
+  background-color: var(--fgPrimary);
+  border-radius: var(--borderRadius);
+  padding: 5px 10px;
+}
