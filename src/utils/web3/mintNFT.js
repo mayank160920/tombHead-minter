@@ -9,7 +9,7 @@ export async function mintNFT(tokenUri, nftContractAddress, accountAddress) {
     value: 0
   });
 
-  await NFTContract.methods.approve(tokenUri).send({
+  await NFTContract.methods.mint(tokenUri).send({
     from: accountAddress,
     value: 0
   });
