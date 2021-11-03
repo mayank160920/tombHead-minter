@@ -5,7 +5,7 @@ export async function checkRights(nftContractAddress, accountAddress) {
   const NFTContract = new web3.eth.Contract(abi, nftContractAddress);
 
   const result = await NFTContract.methods
-    .hasRole(window.Web3.utils.asciiToHex("DEFAULT_ADMIN_ROLE"), accountAddress)
+    .hasRole('0x0000000000000000000000000000000000000000000000000000000000000000', accountAddress)
     .call();
   return result;
 }
