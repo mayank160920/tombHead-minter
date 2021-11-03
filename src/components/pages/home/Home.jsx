@@ -3,6 +3,8 @@ import { useWeb3Context } from "../../../context/web3/Web3Context";
 import { Button } from "../../shared/button/Button";
 import { Spinner } from "../../shared/spinner/Spinner";
 import { mintNFT } from "../../../utils/web3/mintNFT";
+import { checkRights } from "../../../utils/web3/checkRights";
+import { getNextTokenRep } from "../../../utils/parseUtils/getNextTokenRep";
 import { useState, useEffect, useRef } from "react";
 import { toast } from "react-toastify";
 import Dropdown from "react-dropdown";
@@ -24,6 +26,7 @@ export function Home(props) {
   const inputFileRef = useRef(null);
 
   const [btnBusy, setBtnBusy] = useState(false);
+  const [nextTokenRep, setNextTokenRep] = useState("xx/xx");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
@@ -43,6 +46,11 @@ export function Home(props) {
       return toast.error("NFT Description should not be empty");
     } else if (!selectedFile) {
       return toast.error("Select a file to upload");
+    }
+
+    const hasMintingRights = await checkRights(NFTAddress.value, address);
+    if (!hasMintingRights) {
+      return toast.error("You don't have the rights to mint NFT");
     }
 
     try {
@@ -77,6 +85,12 @@ export function Home(props) {
     }
   }, [IPFSerror]);
 
+  useEffect(() => {
+    getNextTokenRep(NFTAddress.value).then((_tokenRep) =>
+      setNextTokenRep(_tokenRep)
+    );
+  }, []);
+
   return (
     <div className={style.wrapper}>
       <div className={style.headbtns_wrapper}>
@@ -94,6 +108,10 @@ export function Home(props) {
         </Button>
       </div>
 
+      <p>
+        Token : &nbsp;
+        <span style={{ color: "var(--fgText)" }}>{nextTokenRep}</span>
+      </p>
       <p>Name :</p>
       <input
         name="name"
