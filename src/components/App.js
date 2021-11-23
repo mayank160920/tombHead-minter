@@ -8,7 +8,26 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const NFTAddressOptions = [
-  { value: "0xF6E47985bEB90bC1D24E9d1a1daAF2b316c3726E", label: "TombHeads" }
+  {
+    value: "0xF6E47985bEB90bC1D24E9d1a1daAF2b316c3726E",
+    label: "TombHeads",
+    avatar: "./artists/tombhead_320.png"
+  },
+  {
+    value: "0xF6E47985bEB90bC1D24E9d1a1daAF2b316c3726E",
+    label: "TombHeads01",
+    avatar: "./artists/samurai_320.png"
+  },
+  {
+    value: "0xF6E47985bEB90bC1D24E9d1a1daAF2b316c3726E",
+    label: "TombHeads02",
+    avatar: "./artists/tombhead_320.png"
+  },
+  {
+    value: "0xF6E47985bEB90bC1D24E9d1a1daAF2b316c3725E",
+    label: "DefiDino",
+    avatar: "./artists/defidino_320.gif"
+  }
 ];
 
 export default function App() {
@@ -24,7 +43,7 @@ export default function App() {
           <Approve NFTAddy={NFTAddress} />
         </Route>
       </Switch>
-      <Footer style={{ visibility: "hidden" }} />
+      <Footer style={{ visibility: "hiddn" }} />
       <ToastContainer
         style={{ overflowWrap: "anywhere" }}
         position="bottom-right"

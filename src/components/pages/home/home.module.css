@@ -12,6 +12,12 @@
   align-items: center;
 }
 
+.avatarImg {
+  border-radius: 50%;
+  border: #666 solid thin;
+  width: 50%;
+}
+
 .dropdown {
   width: 100%;
   max-width: min(100%, 400px);
