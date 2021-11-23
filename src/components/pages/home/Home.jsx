@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import { useIPFS } from "../../../context/ipfs/IPFSContext";
 import { useWeb3Context } from "../../../context/web3/Web3Context";
 import { Button } from "../../shared/button/Button";
@@ -105,6 +106,7 @@ export function Home(props) {
             ?.avatar
         }
         alt="..."
+        key={uuidv4()}
       />
       <div className={style.headbtns_wrapper}>
         <Dropdown
