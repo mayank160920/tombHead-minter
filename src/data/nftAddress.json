@@ -1,0 +1,12 @@
+[
+  {
+    "value": "0x88a280A8d5387eeF9fB981057Da01c3C6d41171B",
+    "label": "TombHeads",
+    "avatar": "./artists/tombhead_320.png"
+  },
+  {
+    "value": "0x7Eb605E32AA833dff55DF3BAe51Afb82eC61e372",
+    "label": "FantOLanterns",
+    "avatar": "./artists/fant_o_lanterns.png"
+  }
+]

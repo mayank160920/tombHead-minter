@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import { useIPFS } from "../../../context/ipfs/IPFSContext";
 import { useWeb3Context } from "../../../context/web3/Web3Context";
 import { Button } from "../../shared/button/Button";
@@ -14,7 +15,7 @@ import style from "./home.module.css";
 
 const headbtns_wrapper_btn = {
   maxWidth: "min(100%, 400px)",
-  margin: "10px auto",
+  margin: "10px auto"
 };
 
 export function Home(props) {
@@ -58,7 +59,7 @@ export function Home(props) {
       const metadataUrl = await IPFSupload(
         {
           name: name,
-          description: description,
+          description: description
         },
         selectedFile
       );
@@ -98,6 +99,15 @@ export function Home(props) {
 
   return (
     <div className={style.wrapper}>
+      <img
+        className={style.avatarImg}
+        src={
+          NFTAddressOptions.find((addy) => addy.value === NFTAddress.value)
+            ?.avatar
+        }
+        alt="..."
+        key={uuidv4()}
+      />
       <div className={style.headbtns_wrapper}>
         <Dropdown
           className={style.dropdown}

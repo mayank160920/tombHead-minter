@@ -4,12 +4,9 @@ import { Home } from "../components/pages/home/Home";
 import { Approve } from "../components/pages/approve/Approve";
 import { Header } from "../components/shared/header/Header";
 import { Footer } from "../components/shared/footer/Footer";
+import NFTAddressOptions from "../data/nftAddress.json";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-const NFTAddressOptions = [
-  { value: "0xF6E47985bEB90bC1D24E9d1a1daAF2b316c3726E", label: "TombHeads" }
-];
 
 export default function App() {
   const [NFTAddress, setNFTAddress] = useState(NFTAddressOptions[0]);
@@ -24,7 +21,7 @@ export default function App() {
           <Approve NFTAddy={NFTAddress} />
         </Route>
       </Switch>
-      <Footer style={{ visibility: "hidden" }} />
+      <Footer style={{ visibility: "hiddn" }} />
       <ToastContainer
         style={{ overflowWrap: "anywhere" }}
         position="bottom-right"

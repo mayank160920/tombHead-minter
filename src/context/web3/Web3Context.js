@@ -24,12 +24,12 @@ export function Web3ContextProvider({ children }) {
 
       // request chainId
       const chainId = await window.ethereum.request({ method: "eth_chainId" });
-      // if (parseInt(chainId) !== (250)) {
-      //   throw Error("Please select FTM Network in your wallet");
-      // }
-      if (parseInt(chainId) !== 4) {
-        throw Error("Please select Rinkeby Network in your wallet");
+      if (parseInt(chainId) !== 250) {
+        throw Error("Please select FTM Network in your wallet");
       }
+      // if (parseInt(chainId) !== 4) {
+      //   throw Error("Please select Rinkeby Network in your wallet");
+      // }
 
       // check if events are registered
       if (!eventsRegistered) {

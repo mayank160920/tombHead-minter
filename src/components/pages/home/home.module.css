@@ -12,6 +12,15 @@
   align-items: center;
 }
 
+.avatarImg {
+  border-radius: 50%;
+  border: #666 solid thin;
+  width: 50%;
+  min-height: 180px;
+  aspect-ratio: 1;
+  background: radial-gradient(#e66465, #9198e5);
+}
+
 .dropdown {
   width: 100%;
   max-width: min(100%, 400px);
